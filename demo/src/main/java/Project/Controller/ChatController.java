@@ -2,8 +2,8 @@ package Project.Controller;
 
 import org.springframework.web.bind.annotation.*;
 
-import Project.Model.DTO.ChatRequestDTO;
-import Project.Model.DTO.ChatResponseDTO;
+import Project.Model.DTO.Request.ChatRequestDTO;
+import Project.Model.DTO.Response.ChatResponseDTO;
 import Project.Service.ChatService;
 import Project.Service.GeminiService;
 import lombok.AllArgsConstructor;

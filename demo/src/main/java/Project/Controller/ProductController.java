@@ -19,10 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import Project.Helper.ApiResponse;
 import Project.Helper.PageResponse;
-import Project.Model.Role;
-import Project.Model.DTO.ProductRequestDTO;
-import Project.Model.DTO.ProductResponseDTO;
-import Project.Model.DTO.RoleResponseDTO;
+import Project.Model.Entity.Role;
+import Project.Model.DTO.Request.ProductRequestDTO;
+import Project.Model.DTO.Response.ProductResponseDTO;
+import Project.Model.DTO.Response.RoleResponseDTO;
 import Project.Model.DTO.ProductWebSocketEvent;
 import Project.Service.ProductService;
 import Project.Service.RoleService;
@@ -36,7 +36,7 @@ public class ProductController {
     private final ProductService productService;
     private final SimpMessagingTemplate messagingTemplate;
 
-    @PostMapping("/products/create")
+    @PostMapping("/products")
     public ResponseEntity<ApiResponse<ProductResponseDTO>> postProduct(@Valid @RequestBody ProductRequestDTO productRequestDTO) {
         ProductResponseDTO productResponseDTO = this.productService.createProduct(productRequestDTO);
         
@@ -95,7 +95,7 @@ public class ProductController {
         return ApiResponse.success(productResponseDTOs);
     }
 
-    @PutMapping("/products/update/{id}")
+    @PutMapping("/products/{id}")
     public ResponseEntity<ApiResponse<ProductResponseDTO>> updateProduct(@PathVariable int id, 
         @Valid @RequestBody ProductRequestDTO updateProductRequestDTO) {
         ProductResponseDTO productResponseDTO = this.productService.updateProductById(id, updateProductRequestDTO);
@@ -112,7 +112,7 @@ public class ProductController {
         return ApiResponse.success(productResponseDTO);
     }
 
-    @DeleteMapping("/products/delete/{id}")
+    @DeleteMapping("/products/{id}")
     public ResponseEntity<ApiResponse<String>> deleteProduct(@PathVariable int id) {
         this.productService.deleteProductById(id);
         ProductWebSocketEvent event =

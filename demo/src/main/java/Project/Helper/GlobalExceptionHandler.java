@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
-import Project.Helper.exception.ResourceAlreadyExistsException;
-import Project.Helper.exception.ResourceNotFoundException;
+import Project.Exception.ResourceAlreadyExistsException;
+import Project.Exception.ResourceNotFoundException;
 
 
 

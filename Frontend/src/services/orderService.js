@@ -1,9 +1,9 @@
 import api from './api';
 
 export const orderService = {
-  // POST /orders/create
+  // POST /orders
   createOrder: async (orderData) => {
-    const response = await api.post('/orders/create', orderData);
+    const response = await api.post('/orders', orderData);
     return response.data;
   },
 
@@ -19,9 +19,25 @@ export const orderService = {
     return response.data?.data || response.data;
   },
 
-  // PUT /orders/{id}/cancel
+  // PATCH /orders/{id}?status=CANCELLED
   cancelOrder: async (id) => {
-    const response = await api.put(`/orders/${id}/cancel`);
+    const response = await api.patch(`/orders/${id}`, null, {
+      params: {
+        status: 'CANCELLED'
+      }
+    });
+
+    return response.data;
+  },
+
+  // PATCH /orders/{id}?status=SHIPPED
+  updateOrderStatus: async (id, status) => {
+    const response = await api.patch(`/orders/${id}`, null, {
+      params: {
+        status
+      }
+    });
+
     return response.data;
   }
 };

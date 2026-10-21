@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import Project.Helper.ApiResponse;
-import Project.Model.Role;
-import Project.Model.DTO.RoleResponseDTO;
+import Project.Model.Entity.Role;
+import Project.Model.DTO.Response.RoleResponseDTO;
 import Project.Service.RoleService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -25,7 +25,7 @@ public class RoleController {
 
 	private final RoleService roleService;
 
-	@PostMapping("/roles/create")
+	@PostMapping("/roles")
 	public ResponseEntity<ApiResponse<Role>> postRole(@Valid @RequestBody Role inputRole) {
 		Role role = this.roleService.createRole(inputRole);
 		return ApiResponse.created(role);
@@ -43,13 +43,13 @@ public class RoleController {
 		return ApiResponse.success(role);
 	}
 
-	@PutMapping("/roles/update/{id}")
+	@PutMapping("/roles/{id}")
 	public ResponseEntity<ApiResponse<RoleResponseDTO>> putRole(@PathVariable int id, @Valid @RequestBody Role inputRole) {
 		RoleResponseDTO role = this.roleService.updateRoleById(id, inputRole);
 		return ApiResponse.success(role);
 	}
 
-	@DeleteMapping("/roles/delete/{id}")
+	@DeleteMapping("/roles/{id}")
 	public ResponseEntity<ApiResponse<String>> deleteRole(@PathVariable int id) {
 		this.roleService.deleteRoleById(id);
 		return ApiResponse.success("ok");

@@ -2,8 +2,8 @@ package Project.Service;
 
 import org.springframework.stereotype.Service;
 
-import Project.Helper.exception.ResourceNotFoundException;
-import Project.Model.RefreshToken;
+import Project.Exception.ResourceNotFoundException;
+import Project.Model.Entity.RefreshToken;
 import Project.Repository.RefreshTokenRepository;
 import lombok.RequiredArgsConstructor;
 

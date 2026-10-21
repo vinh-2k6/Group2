@@ -1,8 +1,8 @@
 package Project.Service;
 
-import Project.Model.DTO.ChatResponseDTO;
-import Project.Model.DTO.ProductResponseDTO;
-import Project.Model.DTO.ProductSearchDTO;
+import Project.Model.DTO.Response.ChatResponseDTO;
+import Project.Model.DTO.Response.ProductResponseDTO;
+import Project.Model.DTO.Request.ProductSearchDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
 package Project.Service;
 
-import Project.Model.DTO.ProductSearchDTO;
+import Project.Model.DTO.Request.ProductSearchDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.genai.Client;
 import com.google.genai.types.GenerateContentConfig;

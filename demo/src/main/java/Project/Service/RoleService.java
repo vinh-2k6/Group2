@@ -5,10 +5,10 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import Project.Helper.exception.ResourceAlreadyExistsException;
-import Project.Helper.exception.ResourceNotFoundException;
-import Project.Model.Role;
-import Project.Model.DTO.RoleResponseDTO;
+import Project.Exception.ResourceAlreadyExistsException;
+import Project.Exception.ResourceNotFoundException;
+import Project.Model.Entity.Role;
+import Project.Model.DTO.Response.RoleResponseDTO;
 import Project.Repository.RoleRepository;
 import lombok.RequiredArgsConstructor;
 

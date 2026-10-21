@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import Project.Helper.ApiResponse;
-import Project.Model.DTO.CartItemRequestDTO;
-import Project.Model.DTO.CartResponseDTO;
+import Project.Model.DTO.Request.CartItemRequestDTO;
+import Project.Model.DTO.Response.CartResponseDTO;
 import Project.Service.CartService;
 
 import lombok.RequiredArgsConstructor;
@@ -59,7 +59,7 @@ public class CartController {
         return ApiResponse.success(cartResponseDTO);
     }
 
-    @DeleteMapping("/users/{userId}/delete/cart/items/{cartItemId}")
+    @DeleteMapping("/users/{userId}/cart/items/{cartItemId}")
     public ResponseEntity<ApiResponse<String>> deleteCartItem(
             @PathVariable int userId,
             @PathVariable int cartItemId) {

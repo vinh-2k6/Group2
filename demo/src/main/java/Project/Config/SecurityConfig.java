@@ -61,16 +61,19 @@ public class SecurityConfig {
 
     @Bean 
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(request -> request
-                                    .requestMatchers("/auth/login", "/auth/register", 
-                                    "/products", "/products/{id}", "/ws/**"
-                                    ).permitAll()
-                                    .anyRequest().authenticated()
+        // http.authorizeHttpRequests(request -> request
+        //                             .requestMatchers("/auth/login", "/auth/register", 
+        //                             "/products", "/products/{id}", "/ws/**" 
+        //                             ).permitAll()
+        //                             .anyRequest().authenticated()
+        // );
+
+        http.authorizeHttpRequests(request -> request.anyRequest().permitAll()
         );
 
         http.oauth2ResourceServer(oath2 -> oath2
                             .jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthenticationConverter())));
-        http.csrf(c -> c.disable());
+        //http.csrf(c -> c.disable());
         http.cors(cors -> {});
         http.sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
         return http.build();

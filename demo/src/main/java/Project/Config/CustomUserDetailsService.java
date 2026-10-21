@@ -20,7 +20,7 @@ public class CustomUserDetailsService implements UserDetailsService  {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		Project.Model.User myUser = this.userService.findUserByEmail(username);
+		Project.Model.Entity.User myUser = this.userService.findUserByEmail(username);
 
 		if (myUser == null) {
 			throw new UsernameNotFoundException("user not found");

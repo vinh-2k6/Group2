@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import Project.Helper.ApiResponse;
-import Project.Model.Category;
-import Project.Model.DTO.CategoryDTO;
+import Project.Model.Entity.Category;
+import Project.Model.DTO.Response.CategoryDTO;
 import Project.Service.CategoryService;
 
 import jakarta.validation.Valid;
@@ -25,7 +25,7 @@ public class CategoryController {
 
     private final CategoryService categoryService;
 
-    @PostMapping("/categories/create")
+    @PostMapping("/categories")
     public ResponseEntity<ApiResponse<Category>> postCategory(
             @Valid @RequestBody Category inputCategory) {
 
@@ -51,7 +51,7 @@ public class CategoryController {
         return ApiResponse.success(category);
     }
 
-    @PutMapping("/categories/update/{id}")
+    @PutMapping("/categories/{id}")
     public ResponseEntity<ApiResponse<CategoryDTO>> putCategory(
             @PathVariable int id,
             @Valid @RequestBody Category inputCategory) {
@@ -62,7 +62,7 @@ public class CategoryController {
         return ApiResponse.success(category);
     }
 
-    @DeleteMapping("/categories/delete/{id}")
+    @DeleteMapping("/categories/{id}")
     public ResponseEntity<ApiResponse<String>> deleteCategory(
             @PathVariable int id) {
 

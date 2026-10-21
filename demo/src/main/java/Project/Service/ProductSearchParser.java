@@ -2,7 +2,7 @@ package Project.Service;
 
 import org.springframework.stereotype.Service;
 
-import Project.Model.DTO.ProductSearchDTO;
+import Project.Model.DTO.Request.ProductSearchDTO;
 
 @Service
 public class ProductSearchParser {

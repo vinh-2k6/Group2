@@ -6,10 +6,10 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import Project.Helper.exception.ResourceAlreadyExistsException;
-import Project.Helper.exception.ResourceNotFoundException;
-import Project.Model.Brand;
-import Project.Model.DTO.BrandDTO;
+import Project.Exception.ResourceAlreadyExistsException;
+import Project.Exception.ResourceNotFoundException;
+import Project.Model.Entity.Brand;
+import Project.Model.DTO.Response.BrandDTO;
 import Project.Repository.BrandRepository;
 import lombok.RequiredArgsConstructor;
 

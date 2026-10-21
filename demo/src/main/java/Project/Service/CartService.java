@@ -5,17 +5,17 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import Project.Helper.exception.ResourceNotFoundException;
-import Project.Model.Cart;
-import Project.Model.CartItem;
-import Project.Model.Product;
-import Project.Model.User;
-import Project.Model.DTO.BrandDTO;
-import Project.Model.DTO.CartItemRequestDTO;
-import Project.Model.DTO.CartItemResponseDTO;
-import Project.Model.DTO.CartResponseDTO;
-import Project.Model.DTO.CategoryDTO;
-import Project.Model.DTO.ProductResponseDTO;
+import Project.Exception.ResourceNotFoundException;
+import Project.Model.Entity.Cart;
+import Project.Model.Entity.CartItem;
+import Project.Model.Entity.Product;
+import Project.Model.Entity.User;
+import Project.Model.DTO.Response.BrandDTO;
+import Project.Model.DTO.Request.CartItemRequestDTO;
+import Project.Model.DTO.Response.CartItemResponseDTO;
+import Project.Model.DTO.Response.CartResponseDTO;
+import Project.Model.DTO.Response.CategoryDTO;
+import Project.Model.DTO.Response.ProductResponseDTO;
 import Project.Repository.CartItemRepository;
 import Project.Repository.CartRepository;
 import Project.Repository.ProductRepository;

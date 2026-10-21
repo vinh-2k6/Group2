@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import Project.Helper.ApiResponse;
-import Project.Model.Brand;
-import Project.Model.DTO.BrandDTO;
+import Project.Model.Entity.Brand;
+import Project.Model.DTO.Response.BrandDTO;
 import Project.Service.BrandService;
 
 import jakarta.validation.Valid;
@@ -25,7 +25,7 @@ public class BrandController {
 
     private final BrandService brandService;
 
-    @PostMapping("/brands/create")
+    @PostMapping("/brands")
     public ResponseEntity<ApiResponse<Brand>> postBrand(
             @Valid @RequestBody Brand inputBrand) {
 
@@ -51,7 +51,7 @@ public class BrandController {
         return ApiResponse.success(brand);
     }
 
-    @PutMapping("/brands/update/{id}")
+    @PutMapping("/brands/{id}")
     public ResponseEntity<ApiResponse<BrandDTO>> putBrand(
             @PathVariable int id,
             @Valid @RequestBody Brand inputBrand) {
@@ -61,7 +61,7 @@ public class BrandController {
         return ApiResponse.success(brand);
     }
 
-    @DeleteMapping("/brands/delete/{id}")
+    @DeleteMapping("/brands/{id}")
     public ResponseEntity<ApiResponse<String>> deleteBrand(
             @PathVariable int id) {
 

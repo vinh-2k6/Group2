@@ -16,11 +16,11 @@ import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
 import org.springframework.stereotype.Service;
 
-import Project.Helper.exception.ResourceNotFoundException;
-import Project.Model.RefreshToken;
-import Project.Model.User;
-import Project.Model.DTO.ExchangeTokenResponse;
-import Project.Model.DTO.LoginResponseDTO;
+import Project.Exception.ResourceNotFoundException;
+import Project.Model.Entity.RefreshToken;
+import Project.Model.Entity.User;
+import Project.Model.DTO.Response.ExchangeTokenResponse;
+import Project.Model.DTO.Response.LoginResponseDTO;
 import Project.Repository.UserRepository;
 import Project.Service.RefreshTokenService;
 import lombok.RequiredArgsConstructor;

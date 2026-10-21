@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import Project.Helper.exception.ResourceNotFoundException;
-import Project.Model.Comment;
-import Project.Model.DTO.CommentResponseDTO;
+import Project.Exception.ResourceNotFoundException;
+import Project.Model.Entity.Comment;
+import Project.Model.DTO.Response.CommentResponseDTO;
 import Project.Repository.CommentRepository;
 import lombok.RequiredArgsConstructor;
 

@@ -11,8 +11,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import Project.Model.Brand;
-import Project.Model.Product;
+import Project.Model.Entity.Brand;
+import Project.Model.Entity.Product;
 
 @Repository 
 public interface ProductRepository extends JpaRepository<Product, Integer>{

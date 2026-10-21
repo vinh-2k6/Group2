@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import Project.Helper.ApiResponse;
 import Project.Helper.PageResponse;
-import Project.Model.DTO.UserRequestDTO;
-import Project.Model.DTO.UserResponseDTO;
+import Project.Model.DTO.Request.UserRequestDTO;
+import Project.Model.DTO.Response.UserResponseDTO;
 import Project.Service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -56,7 +56,7 @@ public class UserController {
 		return ApiResponse.success(userResponseDTO);
 	}
 
-	@PutMapping("/users/update/{id}")
+	@PutMapping("/users/{id}")
 	public ResponseEntity<ApiResponse<UserResponseDTO>> updateUserById(@PathVariable int id,
 			@RequestBody UserRequestDTO inputUser) {
 
@@ -65,7 +65,7 @@ public class UserController {
 		return ApiResponse.success(userResponseDTO);
 	}
 
-	@DeleteMapping("/users/delete/{id}")
+	@DeleteMapping("/users/{id}")
 	public ResponseEntity<ApiResponse<String>> deleteUserById(@PathVariable int id) {
 		this.userService.deleteUserById(id);
 		return ApiResponse.success("delete success");

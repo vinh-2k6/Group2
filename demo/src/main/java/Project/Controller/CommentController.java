@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import Project.Helper.ApiResponse;
-import Project.Model.Comment;
-import Project.Model.DTO.CommentResponseDTO;
+import Project.Model.Entity.Comment;
+import Project.Model.DTO.Response.CommentResponseDTO;
 import Project.Service.CommentService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +23,7 @@ import lombok.RequiredArgsConstructor;
 public class CommentController {
 	private final CommentService commentService;
 
-	@PostMapping("/comments/create")
+	@PostMapping("/comments")
 	public ResponseEntity<ApiResponse<Comment>> createComment(@Valid @RequestBody Comment inputComment) {
 		Comment comment = this.commentService.createComment(inputComment);
 		return ApiResponse.created(comment);
@@ -41,14 +41,14 @@ public class CommentController {
 		return ApiResponse.success(comment);
 	}
 
-	@PutMapping("/comments/update/{id}")
+	@PutMapping("/comments/{id}")
 	public ResponseEntity<ApiResponse<CommentResponseDTO>> updateCommentById(@PathVariable int id,
 			@Valid @RequestBody Comment inputComment) {
 		CommentResponseDTO comment = this.commentService.updateCommentById(id, inputComment);
 		return ApiResponse.success(comment);
 	}
 
-	@DeleteMapping("/comments/delete/{id}")
+	@DeleteMapping("/comments/{id}")
 	public ResponseEntity<ApiResponse<String>> deleteCommentById(@PathVariable int id) {
 		this.commentService.deleteCommentById(id);
 		return ApiResponse.success("ok");

@@ -20,12 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import Project.Config.JWTService;
 import Project.Helper.ApiResponse;
-import Project.Model.RefreshToken;
-import Project.Model.User;
-import Project.Model.DTO.ExchangeTokenResponse;
-import Project.Model.DTO.LoginRequestDTO;
-import Project.Model.DTO.LoginResponseDTO;
-import Project.Model.DTO.LoginResponseDTO.UserLogin;
+import Project.Model.Entity.RefreshToken;
+import Project.Model.Entity.User;
+import Project.Model.DTO.Response.ExchangeTokenResponse;
+import Project.Model.DTO.Request.LoginRequestDTO;
+import Project.Model.DTO.Response.LoginResponseDTO;
+import Project.Model.DTO.Response.LoginResponseDTO.UserLogin;
 import Project.Service.RefreshTokenService;
 import Project.Service.UserService;
 import jakarta.validation.Valid;

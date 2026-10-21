@@ -5,10 +5,10 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import Project.Helper.exception.ResourceAlreadyExistsException;
-import Project.Helper.exception.ResourceNotFoundException;
-import Project.Model.Category;
-import Project.Model.DTO.CategoryDTO;
+import Project.Exception.ResourceAlreadyExistsException;
+import Project.Exception.ResourceNotFoundException;
+import Project.Model.Entity.Category;
+import Project.Model.DTO.Response.CategoryDTO;
 import Project.Repository.CategoryRepository;
 import lombok.RequiredArgsConstructor;
 
